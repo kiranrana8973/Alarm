@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
             DisplayNotification();
         }
     }
+    int countID=1;
     private void DisplayNotification() {
 
         Notification notification = new NotificationCompat.Builder(this, CreateChannel.CHANNEL_1)
@@ -87,7 +88,8 @@ public class MainActivity extends AppCompatActivity {
                 .setCategory(NotificationCompat.CATEGORY_MESSAGE)
                 .build();
 
-        notificationManagerCompat.notify(1, notification);
+        notificationManagerCompat.notify(countID, notification);
+        countID++;
     }
     public void stopAlarm() {
         ringtoneSound.stop();
